@@ -19,8 +19,8 @@ Options may be specified by direct input, like specifying a name, or by using op
 
 There is a 'generator generator' :) that can be used to easily create new generator helpers for some specific needs that you might have, like creating a test, view or config file:
 
-	alt-generator generator create generator AndroidView // create a 'component' generator using the Wizard, then implement it once alt-generator for all!
-	alt-generator AndroidView create UserInfoPanel // Use your wizard to create whatever you prepared, XML files, java classes, groovy scripts, ...
+	alt-generator generator create generator AndroidView // create an 'AndroidView' generator wizard
+	alt-generator AndroidView create UserInfoPanel // Use your wizard to do whatever you wanted, create XML files, java classes, groovy scripts, ...
 
 Examples using [a bash alias](#aliases) for the `alt-entity` generator.
 All examples will be using this User entity.
