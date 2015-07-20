@@ -1,26 +1,31 @@
 
 # alt-generator
 
+__NONE OF THIS IS REAL!__
+
 A set of CLI generator tools to simplify the work with boilerplate code that is tedious but often neccessary.
 The initial usecase was working with the Alt javascript library, a flux implementation for react.js.
-However, it should be easy to define you own helpers for any language or framework.  
+However, defining a simple API and using itself, it should be easy to define you own helpers for any language or framework.  
   
 The idea is to generate actual source files from predefined templates and user-given options.
 Options are given by the user's answers to predefined questions on the commandline, much like the usage of `npm init`.
-
-There is a generator generator that can be used to easily create new helpers for some specific needs that you might have, like creating a test, view or config file.
 
 All configuration is based on defaults, so that sometimes it may be skipped altogether, creating a default set of output in predefined locations. 
 Otherwise, when you give the answers, it tries to stay out of your way, allowing you to keep hitting the enter key and intervening only occasionally.
 
 Options may be specified by direct input, like specifying a name, or by using options in either multiple-choice or single-exclusive manner.
 
-	alt-generator [generator-name][target-name, generator-type]
+	alt-generator [generator][command, ...options]
 
-Example using the `create` generator, using the default generator type `alt-entity`.
+There is a 'generator generator' :) that can be used to easily create new generator helpers for some specific needs that you might have, like creating a test, view or config file:
+
+	alt-generator generator create generator AndroidView // create a 'component' generator using the Wizard, then implement it once alt-generator for all!
+	alt-generator AndroidView create UserInfoPanel // Use your wizard to create whatever you prepared, XML files, java classes, groovy scripts, ...
+
+Examples using [a bash alias](#aliases) for the `alt-entity` generator.
 All examples will be using this User entity.
 
-	>> alt-generator -new User
+	>> alt-entity create User
 	Skip configuration steps and use defaults? (✓) no () yes
 	name of the entity: User
 	use generators:
@@ -76,7 +81,8 @@ Example using the User entity:
 	>>	( ) number
 	>>	( ) bool  
 	>>	( ) custom type  
-	[store] "name": React.PropTypes.string.isRequired 
+	[store] plese confirm:
+	"name": React.PropTypes.string.isRequired 
 	>> (✓) ok ( ) no
 	
 	[store] is "email" required? (✓) no ( ) yes
@@ -85,7 +91,8 @@ Example using the User entity:
 	>>	( ) number
 	>>	( ) bool  
 	>>	( ) custom type  
-	[store] "email": React.PropTypes.string 
+	[store] please confirm:
+	"email": React.PropTypes.string 
 	>> (✓) ok ( ) no
 	
 	[store] is "auth" required? ( ) no (✓) yes
@@ -96,7 +103,8 @@ Example using the User entity:
 	>>	(✓) custom type  
 	[store] specify a custom type type for "auth": 
 	>> shape({token: any.isRequired, timestamp:number.isRequired})
-	[store] "auth": React.PropTypes.shape({"token": React.PropTypes.any.isRequired, "timestamp": React.PropTypes.number.isRequired}) 
+	[store] please confirm:
+	"auth": React.PropTypes.shape({"token": React.PropTypes.any.isRequired, "timestamp": React.PropTypes.number.isRequired}) 
 	(✓) ok ( ) no
 	
 	[store] target file:
@@ -211,6 +219,6 @@ When
 		\
 	}
 
-#### .bashr shortcuts
+#### <a name="aliases">bash aliases
 
-alias alt-entity="./node_modules/.bin/alt-entity"
+alias alt-entity="./node_modules/.bin/alt-generator alt-entity"
