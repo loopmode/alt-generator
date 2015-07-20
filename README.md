@@ -21,12 +21,12 @@ Example using the `create` generator, using the default generator type `alt-enti
 All examples will be using this User entity.
 
 	>> alt-generator -new User
-	Skip configuration steps and use defaults? (âœ“) no () yes
+	Skip configuration steps and use defaults? (✓) no () yes
 	name of the entity: User
 	use generators:
-		(âœ“) store
-		(âœ“) actions
-		(âœ“) datasource
+		(✓) store
+		(✓) actions
+		(✓) datasource
 		 ( ) component
 		 ( ) test
 		 ( ) docs
@@ -55,7 +55,7 @@ A link to the created markdown file will be added to `yourDocs/readme.md` (maybe
 Example using the User entity:
 
 	>> alt-entity -docs User
-	template: (âœ“) markdown ( ) other template?
+	template: (✓) markdown ( ) other template?
 	output: docs/readme/entities/User.md 
 
 
@@ -65,39 +65,39 @@ Creates a new store for an entity. When using immutable.js, all properties of ty
 
 Example using the User entity:
 
-	[store] use immutable.js? (âœ“) yes ( ) no
+	[store] use immutable.js? (✓) yes ( ) no
 	[store] specify a list of property names. Use comma as separator.
 	>> name, email, auth
-	[store] do you want to define propTypes? (âœ“) yes ( ) no
+	[store] do you want to define propTypes? (✓) yes ( ) no
 
-	[store] is "name" required? ( ) no (âœ“) yes					// no was default
+	[store] is "name" required? ( ) no (✓) yes					// no was default
 	[store] propType for: "name"
-	>>	(âœ“) string  
+	>>	(✓) string  
 	>>	( ) number
 	>>	( ) bool  
 	>>	( ) custom type  
 	[store] "name": React.PropTypes.string.isRequired 
-	>> (âœ“) ok ( ) no
+	>> (✓) ok ( ) no
 	
-	[store] is "email" required? (âœ“) no ( ) yes
+	[store] is "email" required? (✓) no ( ) yes
 	[store] propType for: "email"
-	>>	(âœ“) string  
+	>>	(✓) string  
 	>>	( ) number
 	>>	( ) bool  
 	>>	( ) custom type  
 	[store] "email": React.PropTypes.string 
-	>> (âœ“) ok ( ) no
+	>> (✓) ok ( ) no
 	
-	[store] is "auth" required? ( ) no (âœ“) yes
+	[store] is "auth" required? ( ) no (✓) yes
 	[store] propType for: "auth"
 	>>	( ) string  
 	>>	( ) number
 	>>	( ) bool  
-	>>	(âœ“) custom type  
+	>>	(✓) custom type  
 	[store] specify a custom type type for "auth": 
 	>> shape({token: any.isRequired, timestamp:number.isRequired})
 	[store] "auth": React.PropTypes.shape({"token": React.PropTypes.any.isRequired, "timestamp": React.PropTypes.number.isRequired}) 
-	(âœ“) ok ( ) no
+	(✓) ok ( ) no
 	
 	[store] target file:
 	>> /src/app/stores/UserStore.js 		// the value was prefilled
@@ -118,7 +118,7 @@ Example using the User entity:
 	[actions] specify a list of actions. Use comma as separator.
 	>> load, loaded, create, created, update, updated, delete, deleted, error
 	
-	[actions] do you want to define params? (âœ“) yes ( ) no
+	[actions] do you want to define params? (✓) yes ( ) no
 	
 	[actions] params for 'load':
 	>> id:number
@@ -141,13 +141,13 @@ Example using the User entity:
 	[actions] Select actions to be handled in {StoreName}
 
 	( )		load
-	(âœ“) 	loaded
+	(✓) 	loaded
 	( )		create
-	(âœ“) 	created
+	(✓) 	created
 	( )		update
-	(âœ“) 	updated
+	(✓) 	updated
 	( )		delete
-	(âœ“)		deleted
+	(✓)		deleted
 
 	[actions] actions configuration done!
 
@@ -163,20 +163,20 @@ When pairs of names are found that share the same base except of a past-tense su
 
 	[datasource] {ActionsName} found.
 	[datasource] specify API request methods for these actions:
-	(âœ“)		load
+	(✓)		load
 	( ) 	loaded
-	(âœ“)		create
+	(✓)		create
 	( ) 	created
-	(âœ“)		update
+	(✓)		update
 	( ) 	updated
-	(âœ“)		delete
+	(✓)		delete
 	( )		deleted
 
 	[datasource] specify API request methods:
-	load	 (âœ“) GET ( ) POST ( ) PUT ( ) PATCH ( ) DELETE
-	create	 ( ) GET (âœ“) POST ( ) PUT ( ) PATCH ( ) DELETE
-	update	 ( ) GET ( ) POST (âœ“) PUT (âœ“) PATCH ( ) DELETE
-	delete	 ( ) GET ( ) POST ( ) PUT ( ) PATCH (âœ“) DELETE
+	load	 (✓) GET ( ) POST ( ) PUT ( ) PATCH ( ) DELETE
+	create	 ( ) GET (✓) POST ( ) PUT ( ) PATCH ( ) DELETE
+	update	 ( ) GET ( ) POST (✓) PUT (✓) PATCH ( ) DELETE
+	delete	 ( ) GET ( ) POST ( ) PUT ( ) PATCH (✓) DELETE
 	... // same procedure as with prop types
 
 
