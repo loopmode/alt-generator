@@ -1,7 +1,7 @@
 
 # alt-generator
 
-__NONE OF THIS IS REAL!__
+__This is just an idea, not an implementation!__
 
 A set of CLI generator tools to simplify the work with boilerplate code that is tedious but often neccessary.
 The initial usecase was working with the Alt javascript library, a flux implementation for react.js.
